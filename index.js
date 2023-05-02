@@ -5,6 +5,8 @@ const input = document.getElementById('display');
 const sign = document.querySelector('.sign');
 const previous = document.querySelector('.previous')
 const equal = document.querySelector('.equal');
+const percent = document.querySelector('.percent');
+
 
 for (let i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', function () {
@@ -46,24 +48,25 @@ for (let j = 0; j < special.length; j++) {
                 sign.textContent = '÷';
                 input.textContent = '';
 
-            // case '%':
-            //     special[j].style.background = 'black';
-            //     special[j].style.color = 'white';
-            //     let split = input.textContent.split(' ');
-            //     input.textContent = input.textContent[input.length - 1] / input.textContent[0];
-            //     break;    
+ 
         }
     })
 }
 
 equal.addEventListener('click', function () {
-    let result = eval(`${previous.textContent} ${sign.textContent} ${input.textContent}`);
+    let result = eval(`${previous.textContent} ${sign.textContent == '÷' ? '/' : sign.textContent} ${input.textContent}`);
+    if (result.toString().includes('.')) result = result.toFixed(6);
     sign.textContent = '';
     previous.textContent = '';
     input.textContent = result;
 
 })
 
+percent.addEventListener('click', function () {
+    let result = previous.textContent * input.textContent / 100;
+    input.textContent = eval(`${previous.textContent} ${sign.textContent} ${result}`);
+    sign.textContent = '' , previous.textContent = '';
+})
 
 
 

@@ -1,14 +1,15 @@
 $font-main: 'Bruno Ace SC', cursive;
 
-
 body {
+    overflow: hidden;
+
     font-family: $font-main;
     font-size: 3vw;
 
     padding-top: 20vh;
     padding-bottom: 20vh;
 
-    background: linear-gradient(153deg, rgba(2,0,36,1) 0%, rgba(143,53,157,1) 56%, rgba(0,212,255,1) 100%);
+    background: url('/background.jpg') no-repeat;
 }
 
 .general-block {
@@ -22,18 +23,21 @@ body {
     height: 60vh;
 
     margin: 0 auto;
+
+    box-shadow: 0 0 40px black;
     
-    border: 3px solid black;
+    border: 2px solid black;
     border-radius: 20px;
 
-    background: linear-gradient(153deg, rgba(2,0,36,1) 0%, rgba(213,207,71,1) 71%, rgba(136,255,0,1) 100%);;
+    background: linear-gradient(153deg, rgba(181,255,142,1) 0%, rgba(250,196,255,1) 49%, rgba(255,157,245,1) 100%);
+    // background: linear-gradient(153deg, rgba(2,0,36,1) 0%, rgba(213,207,71,1) 71%, rgba(136,255,0,1) 100%);;
 
 }
 
 .window {
     display: flex;
-    justify-content:center;
-    align-items: flex-end;
+    justify-content:flex-start;
+    align-items:flex-end;
     flex-direction: column;
 
     width: 100%;
@@ -41,20 +45,53 @@ body {
 
     background: transparent;
 
-    border-bottom: 3px solid black;
+    border-bottom: 2px solid black;
 } 
+.sign {
+    position: absolute;
+
+    left: 25vw;
+
+    // border: 1px solid white;
+
+    min-width: 5vw;
+    max-width: 10vw;
+    min-height: 5%;
+    max-height: 10%;
+
+}
+.previous {
+    flex-wrap: wrap;
+
+    // border: 1px solid white;
+
+    min-width: 40%;
+    max-width: 60%;
+    min-height: 15%;
+    max-height: 20%;
+
+    margin-right: 10vw;
+    margin-top: 5vh;
+
+    text-align: end;
+
+    opacity: 0.5;
+}
 .window-p {
     min-width: 60%;
     max-width: 90%;
-    height: 5vh;
 
-    border: none;
+    // border: 1px solid white;
 
+    min-height: 30%;
+    max-height: 40%;
 
     font-size: 7vh;
     color: black;
 
     text-align:end;
+
+    margin-right: 15vw;
 }
 
 .buttons {
@@ -80,13 +117,18 @@ body {
     border-radius: 20px;
     border: none;
 
+    box-shadow: 0 0 10px gray;
+
 }
 
+.button:active {
+    background: gray;
+}
 .button:nth-child(4n) {
-    background: green;
+    background: rgb(72, 161, 72);
 }
 .button:nth-child(19) {
-    background: green;
+    background: rgb(72, 161, 72);
 }
 .zero-button {
     max-width: 40vw;
@@ -95,26 +137,128 @@ body {
 
     grid-area: 5 / 1 / 6 / 3;
 }
-@media screen and (min-width: 810px) {
-    body {
-        font-size: 1.5vw;
-    }
-    .buttons {
-        margin: 2vw 5vh;
-    }
-    .general-block {
-        min-width: 10%;
-        max-width: 20%;
-        min-height: 50vh;
-        max-height: 70vh;
-    }
-
+.button:active:nth-child(4n) {
+    background: green;
+}
+.button:active:nth-child(19) {
+    background: green;
 }
 
-@media screen and (min-width: 300px) {
+
+// @media screen and (min-width: 810px) {
+//     body {
+//         font-size: 1.5vw;
+//     }
+//     .buttons {
+//         margin: 2vw 5vh;
+//     }
+//     .general-block {
+//         min-width: 10%;
+//         max-width: 20%;
+//         min-height: 50vh;
+//         max-height: 70vh;
+//     }
+
+// }
+
+@media screen and (min-width: 200px) and (max-width: 374px) {
+    body {
+       background-size: cover;
+    }
+    .window {
+        min-height: 30%;
+    }
+    .window-p {
+        display: absolute;
+        bottom: 4vh;
+
+        font-size: 4vh;
+
+        margin-bottom: -4vh;
+        margin-right: 6vw;
+    }
+    .sign {
+        margin-top: 5vh;
+    }
     .general-block {
+
         min-width: 40%;
-        max-width: 60%;
+        max-width: 70%;
+        height: 70vh;
     }
     
+}
+
+@media screen and (min-width: 375px) and (max-width: 767px) {
+    .window-p {
+        font-size: 4vh;
+
+        margin-bottom: -1vh;
+        margin-right: 8vw;
+    }
+    .general-block {
+
+        min-width: 40%;
+        max-width: 70%;
+    }
+    .sign {
+        margin-top: 5vh;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1113px) {
+    body {
+        background-size: 100vw 100vh;
+    }
+    .general-block {
+        min-width: 60%;
+        max-width: 70%;
+    }
+    .previous {
+        margin-right: 16vw;
+    }
+    .window-p {
+        font-size: 4vh;
+    }
+    .sign {
+        margin-top: 5vh;
+        margin-left: 3vw;
+    }
+}
+
+@media screen and (min-width: 1114px) and (max-width: 1300px) {
+    body {
+        font-size: 4vh;
+    }
+    .general-block {
+        height: 70vh;
+    }
+    .button {
+        height: 5vh;
+    }
+    .window-p {
+        font-size: 3.9vh;
+        margin-right: 8vw;
+    }
+    .previous {
+        margin-right: 8vw;
+    }
+    .sign {
+        margin-top: 5vh;
+        margin-left: 5vw;
+    }
+}
+@media screen and (min-width: 1301px) {
+
+    body {
+        font-size: 3vh;
+    }
+    .window-p {
+        font-size: 4vh;
+        margin-right: 8.5vw;
+    }
+    .sign {
+        margin-left: 10vw;
+        margin-top: 5vh;
+    }
 }
