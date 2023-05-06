@@ -8,7 +8,7 @@ html {
 body {
   overflow: hidden;
   font-family: "Bruno Ace SC", cursive;
-  font-size: 3vw;
+  font-size: 2em;
   color: black;
   min-height: 90%;
   max-height: 100%;
@@ -121,94 +121,47 @@ body {
   transform: translateY(3px);
 }
 
-@media screen and (min-width: 200px) and (max-width: 374px) {
+@media screen and (min-width: 320px) and (max-width: 499px) {
   body {
-    background-size: cover;
-  }
-  .top-window {
-    min-height: 30%;
-  }
-  .top-window-p {
-    display: absolute;
-    bottom: 4vh;
-    font-size: 4vh;
-    margin-bottom: -4vh;
-    margin-right: 6vw;
-  }
-  .sign {
-    margin-top: 5vh;
+    font-size: 1rem;
   }
   .caltulator {
-    min-width: 40%;
-    max-width: 70%;
-    height: 60vh;
-  }
-}
-@media screen and (min-width: 375px) and (max-width: 767px) {
-  .top-window-p {
-    font-size: 4vh;
-    margin-bottom: -1vh;
-    margin-right: 8vw;
-  }
-  .caltulator {
-    min-width: 40%;
-    max-width: 70%;
-  }
-  .sign {
-    margin-top: 5vh;
-  }
-}
-@media screen and (min-width: 768px) and (max-width: 1113px) {
-  body {
-    background-size: 100vw 100vh;
-  }
-  .caltulator {
-    min-width: 60%;
-    max-width: 70%;
-  }
-  .previous {
-    margin-right: 16vw;
-  }
-  .top-window-p {
-    font-size: 4vh;
-  }
-  .sign {
-    margin-top: 5vh;
-    margin-left: 3vw;
-  }
-}
-@media screen and (min-width: 1114px) and (max-width: 1300px) {
-  body {
-    font-size: 4vh;
-  }
-  .caltulator {
-    height: 70vh;
+    min-width: 30%;
+    max-width: 60%;
+    height: 40vh;
   }
   .button {
-    height: 5vh;
+    min-width: 20%;
+    max-width: 30%;
+    height: 6vh;
   }
-  .top-window-p {
-    font-size: 3.9vh;
-    margin-right: 8vw;
-  }
-  .previous {
-    margin-right: 8vw;
-  }
-  .sign {
-    margin-top: 5vh;
-    margin-left: 5vw;
+  .input-window {
+    height: 5.5vh;
+    font-size: 1.3rem;
+    text-align: end;
   }
 }
-@media screen and (min-width: 1301px) {
+@media screen and (min-width: 500px) and (max-width: 950px) {
   body {
-    font-size: 3vh;
+    font-size: 1rem;
   }
-  .top-window-p {
-    font-size: 4vh;
-    margin-right: 8.5vw;
+  .caltulator {
+    min-width: 30%;
+    max-width: 40%;
+    height: 40vh;
   }
-  .sign {
-    margin-left: 10vw;
-    margin-top: 5vh;
+  .input-window {
+    font-size: 1.4rem;
+    height: 5.5vh;
+  }
+  .button {
+    min-width: 20%;
+    max-width: 40%;
+    height: 6vh;
+  }
+}
+@media screen and (min-width: 951px) {
+  body {
+    font-size: 1.4rem;
   }
 }/*# sourceMappingURL=style.css.map */
