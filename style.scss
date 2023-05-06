@@ -1,83 +1,84 @@
 $font-main: 'Bruno Ace SC', cursive;
 
+html {
+    height: 100%;
+
+    background: white;
+	background: radial-gradient(circle, #fff 20%, #ccc);
+	background-size: 100% 100%;
+}
 body {
     overflow: hidden;
 
     font-family: $font-main;
     font-size: 3vw;
 
+    color: black;
+
+    min-height: 90%;
+    max-height: 100%;
+
     padding-top: 20vh;
     padding-bottom: 20vh;
 
-    background: url('/background.jpg') no-repeat;
 }
 
-.general-block {
+.caltulator {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
+    flex-wrap: wrap;
 
-    min-width: 30%;
-    max-width: 50%;
-    height: 60vh;
+    min-width: 20%;
+    max-width: 30%;
+    height: 32vh;
 
     margin: 0 auto;
 
     box-shadow: 0 0 40px black;
     
-    border: 2px solid black;
-    border-radius: 20px;
+    border-bottom: 4px solid rgb(14, 90, 151);
+    border-radius: 5px;
 
-    background: linear-gradient(153deg, rgba(181,255,142,1) 0%, rgba(250,196,255,1) 49%, rgba(255,157,245,1) 100%);
+    padding: 2vw 2vh;
+
+
+    background: lightblue;
     // background: linear-gradient(153deg, rgba(2,0,36,1) 0%, rgba(213,207,71,1) 71%, rgba(136,255,0,1) 100%);;
 
 }
 
-.window {
+.top-window {
     display: flex;
-    justify-content:flex-start;
+    justify-content:space-between;
     align-items:flex-end;
-    flex-direction: column;
+    flex-direction: row;
 
     width: 100%;
-    height: 35%;
+    height: 20%;
 
     background: transparent;
 
-    border-bottom: 2px solid black;
+    border-radius: 5px;
+
 } 
-.sign {
-    position: absolute;
 
-    left: 25vw;
+.input-window {
+    width: 72.5%;
+    height: 5vh;
 
-    // border: 1px solid white;
+    background-color: rgb(121, 121, 121);
 
-    min-width: 5vw;
-    max-width: 10vw;
-    min-height: 5%;
-    max-height: 10%;
+    border-top: 3px solid rgb(46, 46, 46);
+    border-radius: 5px;
 
-}
-.previous {
-    flex-wrap: wrap;
-
-    // border: 1px solid white;
-
-    min-width: 40%;
-    max-width: 60%;
-    min-height: 15%;
-    max-height: 20%;
-
-    margin-right: 10vw;
-    margin-top: 5vh;
+    margin-right: 0.5vw;
 
     text-align: end;
-
-    opacity: 0.5;
 }
-.window-p {
+
+.top-window-p {
     min-width: 60%;
     max-width: 90%;
 
@@ -95,54 +96,65 @@ body {
 }
 
 .buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr) ;
-    grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 25px;
-    grid-row-gap: 25px;
-
-    padding-bottom: 2vh;
-    padding-left: 2vw;
-    padding-right: 2vw;
-    padding-top: 2vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .button {
-    min-width: 7vw;
+    min-width: 6vw;
     max-width: 9vw;
-    height: 4vh;
+    height: 5vh;
 
     background: white;
 
-    border-radius: 20px;
+    border-radius: 5px;
     border: none;
+    border-bottom: 3px solid gray;
 
     box-shadow: 0 0 10px gray;
 
+    margin-bottom: 1vh;
+    margin-right: 0.5vw;
+
 }
 
-.button:active {
-    background: gray;
-}
+
+
+
 .button:nth-child(4n) {
-    background: rgb(72, 161, 72);
+    background: rgb(199, 168, 239);
 }
-.button:nth-child(19) {
-    background: rgb(72, 161, 72);
+.button:nth-child(15) {
+    background: rgb(89, 205, 89);
+    border-bottom: 3px solid rgb(65, 163, 65);
 }
-.zero-button {
-    max-width: 40vw;
+.clear {
+    background-color: rgb(246, 74, 74);
+    
+    margin: 0;
 
-    border-radius: 20px;
+    border-bottom: 3px solid rgb(170, 47, 47);
+}
+.button:hover {
+    background-color: rgb(189, 42, 189);
+    border-bottom: 3px solid rgb(132, 3, 132);
+}
+.clear:hover {
+    background-color: rgb(208, 43, 43);
+    border-bottom: 3px solid rgb(185, 37, 37);
+}
+.button:nth-child(15):hover {
+    background-color: rgb(62, 219, 62);
+    border-bottom: 3px solid rgb(86, 181, 86);
+}
+.button:active {
+    border-bottom: 0;
+    transform: translateY(3px);
+}
 
-    grid-area: 5 / 1 / 6 / 3;
-}
-.button:active:nth-child(4n) {
-    background: green;
-}
-.button:active:nth-child(19) {
-    background: green;
-}
 
 
 // @media screen and (min-width: 810px) {
@@ -152,7 +164,7 @@ body {
 //     .buttons {
 //         margin: 2vw 5vh;
 //     }
-//     .general-block {
+//     .caltulator {
 //         min-width: 10%;
 //         max-width: 20%;
 //         min-height: 50vh;
@@ -165,10 +177,10 @@ body {
     body {
        background-size: cover;
     }
-    .window {
+    .top-window {
         min-height: 30%;
     }
-    .window-p {
+    .top-window-p {
         display: absolute;
         bottom: 4vh;
 
@@ -180,23 +192,23 @@ body {
     .sign {
         margin-top: 5vh;
     }
-    .general-block {
+    .caltulator {
 
         min-width: 40%;
         max-width: 70%;
-        height: 70vh;
+        height: 60vh;
     }
     
 }
 
 @media screen and (min-width: 375px) and (max-width: 767px) {
-    .window-p {
+    .top-window-p {
         font-size: 4vh;
 
         margin-bottom: -1vh;
         margin-right: 8vw;
     }
-    .general-block {
+    .caltulator {
 
         min-width: 40%;
         max-width: 70%;
@@ -210,14 +222,14 @@ body {
     body {
         background-size: 100vw 100vh;
     }
-    .general-block {
+    .caltulator {
         min-width: 60%;
         max-width: 70%;
     }
     .previous {
         margin-right: 16vw;
     }
-    .window-p {
+    .top-window-p {
         font-size: 4vh;
     }
     .sign {
@@ -230,13 +242,13 @@ body {
     body {
         font-size: 4vh;
     }
-    .general-block {
+    .caltulator {
         height: 70vh;
     }
     .button {
         height: 5vh;
     }
-    .window-p {
+    .top-window-p {
         font-size: 3.9vh;
         margin-right: 8vw;
     }
@@ -253,7 +265,7 @@ body {
     body {
         font-size: 3vh;
     }
-    .window-p {
+    .top-window-p {
         font-size: 4vh;
         margin-right: 8.5vw;
     }
