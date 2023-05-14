@@ -84,6 +84,7 @@ body {
   box-shadow: 0 0 10px gray;
   margin-bottom: 1vh;
   margin-right: 0.5vw;
+  transition: all 0.2s ease;
 }
 
 .button:nth-child(4n) {

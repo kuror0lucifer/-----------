@@ -118,6 +118,7 @@ body {
     margin-bottom: 1vh;
     margin-right: 0.5vw;
 
+    transition: all 0.2s ease;
 }
 
 
@@ -153,7 +154,6 @@ body {
     border-bottom: 0;
     transform: translateY(3px);
 }
-
 
 @media screen and (min-width: 320px) and (max-width: 499px) {
     body {
